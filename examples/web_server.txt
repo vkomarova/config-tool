@@ -1,0 +1,16 @@
+8.0e3 -> base_port;
+4.0e0 -> workers;
+
+begin
+  name := 'my-site';
+  host := '127.0.0.1';
+  port := @(base_port 8.0e1 +);
+  admin_port := @(base_port 1.0e0 +);
+  threads := @(workers 2.0e0 *);
+  timeout := 3.0e1;
+  locations := [ '/' '/api' '/static' ];
+  database := begin
+    user := 'admin';
+    pool := @(workers 1.0e0 -);
+  end;
+end

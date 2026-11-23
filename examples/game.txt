@@ -1,0 +1,19 @@
+1.0e2 -> max_health;
+'W' -> up_key;
+
+begin
+  title := 'Space Adventure';
+  player := begin
+    health := @(max_health);
+    armor := @(max_health 5.0e-1 *);
+    speed := 2.5e0;
+  end;
+  controls := begin
+    up := @(up_key ord);
+    down := @('S' ord);
+  end;
+  levels := [
+    begin name := 'Moon'; enemies := 5.0e0; end
+    begin name := 'Mars'; enemies := @(5.0e0 3.0e0 *); end
+  ];
+end
